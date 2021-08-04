@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="656.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundaries.home_page.HomePageController">
+	<top>
+		<VBox BorderPane.alignment="CENTER">
+			<children>
+				<BorderPane>
+					<center>
+						<ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+							<items>
+								<Hyperlink fx:id="hprlnk_currentAccount" alignment="CENTER" onAction="#dataAccountEventHandler" text="You aren't log" />
+							</items>
+						</ToolBar>
+					</center>
+					<right>
+						<ToolBar nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+							<items>
+								<Button fx:id="btn_registerAnnouncement" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#RegisterAnnouncementEventHandler" text="Insert a new announcement" />
+							</items>
+						</ToolBar>
+					</right>
+					<left>
+						<ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+							<items>
+								<Button fx:id="btn_registerAccount" mnemonicParsing="false" onAction="#RegisterEventHandler" text="Register" />
+								<Button fx:id="btn_login" mnemonicParsing="false" text="Login" />
+							</items>
+						</ToolBar>
+					</left>
+				</BorderPane>
+			</children>
+		</VBox>
+	</top>
+	<left>
+		<Accordion BorderPane.alignment="CENTER">
+			<panes>
+				<TitledPane expanded="false" text="Advanced options">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<VBox prefHeight="334.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+									<children>
+										<Button mnemonicParsing="false" onAction="#createShipmentSettingWindow" prefHeight="25.0" prefWidth="187.0" text="Shipment Setting">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin></Button>
+                              <Button mnemonicParsing="false" onAction="#createPaymentSettingWindow" prefHeight="25.0" prefWidth="187.0" text="Payment Setting">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="187.0" text="Window options">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+									</children>
+								</VBox>
+							</children>
+						</AnchorPane>
+					</content>
+				</TitledPane>
+			</panes>
+		</Accordion>
+	</left>
+	<center>
+		<ListView fx:id="lstv_listAnnouncement" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+	</center>
+</BorderPane>

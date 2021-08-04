@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ScrollPane?>
+
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boundaries.announcement_setting.AnnouncementSettingController">
+   <children>
+      <BorderPane>
+      	<center>
+      		<VBox BorderPane.alignment="TOP_LEFT">
+      			<children>
+                  <Label text="Announcement type">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Change the type of your announcement." textFill="#a0a0a0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <children>
+      						<RadioButton fx:id="rdbtn_sale" mnemonicParsing="false" onAction="#saleSelectedEventHandler" selected="true" text="Sale">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="type" />
+                           </toggleGroup>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+      						<RadioButton fx:id="rdbtn_donation" mnemonicParsing="false" onAction="#donationSelectedEventHandler" text="Donation" toggleGroup="$type">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <VBox>
+                           <children>
+            						<Label text="Announcement cost" />
+            						<TextField fx:id="txtfld_produtCost" />
+                           </children>
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" />
+                  <Label layoutX="20.0" layoutY="20.0" text="Product">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="37.0" text="Use the form below to custom your product." textFill="#a0a0a0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <StackPane>
+                     <children>
+      								<VBox fx:id="vbx_book" visible="false">
+      									<children>
+      										<VBox>
+      											<children>
+      												<Label text="Book type">
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</Label>
+      												<ComboBox fx:id="cmbx_bookType" prefWidth="130.0" promptText="Select...">
+      													<VBox.margin>
+      														<Insets />
+      													</VBox.margin>
+      												</ComboBox>
+      											</children>
+      											<VBox.margin>
+      												<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      											</VBox.margin>
+      										</VBox>
+      										<HBox>
+      											<children>
+      												<VBox>
+      													<children>
+      														<Label text="Title">
+      															<VBox.margin>
+      																<Insets />
+      															</VBox.margin>
+      														</Label>
+      														<TextField fx:id="txtfld_booktitle" />
+      													</children>
+      													<HBox.margin>
+      														<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      													</HBox.margin>
+      												</VBox>
+      												<VBox>
+      													<children>
+      														<Label text="Subtitle (Optional)">
+      															<VBox.margin>
+      																<Insets />
+      															</VBox.margin>
+      														</Label>
+      														<TextField fx:id="txtfld_bookSubtitle" />
+      													</children>
+      													<HBox.margin>
+      														<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      													</HBox.margin>
+      												</VBox>
+                                    <VBox>
+                                       <children>
+                                          <Label text="ISBN">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtfld_ISBN" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+      											</children>
+      										</HBox>
+      										<HBox>
+      											<children>
+      												<VBox>
+      													<children>
+      														<Label text="Authors">
+      															<VBox.margin>
+      																<Insets />
+      															</VBox.margin>
+      														</Label>
+      														<TextField fx:id="txtfld_bookAuthor" />
+      													</children>
+      													<HBox.margin>
+      														<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      													</HBox.margin>
+      												</VBox>
+      												<VBox>
+      													<children>
+      														<Label text="Pages (Optional)">
+      															<VBox.margin>
+      																<Insets />
+      															</VBox.margin>
+      														</Label>
+      														<TextField fx:id="txtfld_bookPage" />
+      													</children>
+      													<HBox.margin>
+      														<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      													</HBox.margin>
+      												</VBox>
+      												<VBox>
+      													<children>
+      														<Label text="Editor">
+      															<VBox.margin>
+      																<Insets />
+      															</VBox.margin>
+      														</Label>
+      														<TextField fx:id="txtfld_bookEditor" />
+      													</children>
+      													<HBox.margin>
+      														<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      													</HBox.margin>
+      												</VBox>
+      											</children>
+      										</HBox>
+      									</children>
+      								</VBox>
+            								<VBox fx:id="vbx_dress" visible="false">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <Label text="Dress type">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                    <ComboBox fx:id="cmbx_dressType" prefWidth="130.0" promptText="Select...">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </ComboBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <HBox>
+                                 <children>
+                                    <VBox>
+                                       <children>
+                                          <Label text="Brand (Optional)">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtfld_dressBrand" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <Label text="Color (Optional)">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <TextField fx:id="txtfld_dressColor" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox>
+                                       <children>
+                                          <Label text="Size (Optional)">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="cmbx_dressSize" prefWidth="130.0" promptText="Select...">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <VBox>
+                                 <children>
+                                    <Label text="Dress Name">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="txtfld_dressName" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+      			</children>
+      		</VBox>
+      
+      
+      
+      
+      
+      
+      	</center>
+      	<bottom>
+            <ToolBar rotate="180.0">
+               <items>
+      				<HBox alignment="BOTTOM_RIGHT" rotate="180.0">
+      					<children>
+      						<Button fx:id="btn_cancel" cancelButton="true" mnemonicParsing="false" onAction="#closeEventHandler" text="Discard Changes">
+      							<HBox.margin>
+      								<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      							</HBox.margin>
+      						</Button>
+      						<Button fx:id="btn_ok" defaultButton="true" mnemonicParsing="false" onAction="#registerEventHandler" text="Save Changes">
+      							<HBox.margin>
+      								<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      							</HBox.margin>
+      						</Button>
+      					</children>
+      				</HBox>
+               </items>
+            </ToolBar>
+      	</bottom>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Manage your announcement">
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Use the form below to modify your announcement." textFill="#a0a0a0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+               </children>
+            </VBox>
+         </top>
+      </BorderPane>
+   </children>
+</HBox>

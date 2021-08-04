@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="boundaries.shipment_setting.ShipmentSettingController">
+	<center>
+		<TabPane prefHeight="400.0" prefWidth="600.0"
+			tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+			<tabs>
+				<Tab fx:id="id_tab1_Shipment" text="Shipment">
+					<content>
+						<BorderPane>
+							<center>
+								<VBox prefHeight="178.0" prefWidth="511.0"
+									BorderPane.alignment="CENTER">
+									<children>
+										<GridPane alignment="CENTER" prefHeight="250.0"
+											prefWidth="600.0">
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES"
+													minWidth="10.0" prefWidth="100.0" />
+												<ColumnConstraints hgrow="SOMETIMES"
+													minWidth="10.0" prefWidth="100.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+											</rowConstraints>
+											<VBox.margin>
+												<Insets top="50.0" />
+											</VBox.margin>
+											<children>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="455.0"
+													text="Select type of shipment" textFill="#0988ff">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="374.0"
+													text="Select the shipping speed" textFill="#0988ff"
+													GridPane.rowIndex="1">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="430.0"
+													text="Select the shipment date arrival" textFill="#0988ff"
+													GridPane.rowIndex="4">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<ComboBox fx:id="id_comboBox1" onAction="#selectElementCmBox"
+													prefHeight="25.0" prefWidth="280.0" GridPane.columnIndex="1" />
+												<ComboBox fx:id="id_comboBox2" onAction="#selectElementCmBox"
+													prefHeight="25.0" prefWidth="280.0" GridPane.columnIndex="1"
+													GridPane.rowIndex="1" />
+												<DatePicker fx:id="id_datePicker" onAction="#selectElementDtPkr"
+													prefHeight="25.0" prefWidth="280.0" GridPane.columnIndex="1"
+													GridPane.rowIndex="4" />
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="305.0"
+													text="Fragile" textFill="#0988ff" GridPane.rowIndex="2">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="367.0"
+													text="Traceability code" textFill="#0988ff"
+													GridPane.rowIndex="3">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<ComboBox fx:id="id_comboBox3" onAction="#selectElementCmBox"
+													prefHeight="25.0" prefWidth="280.0" GridPane.columnIndex="1"
+													GridPane.rowIndex="2" />
+												<ComboBox fx:id="id_comboBox4" onAction="#selectElementCmBox"
+													prefHeight="25.0" prefWidth="280.0" GridPane.columnIndex="1"
+													GridPane.rowIndex="3" />
+												<Button mnemonicParsing="false" onAction="#changeTab13"
+													text="Informations" GridPane.rowIndex="5">
+													<GridPane.margin>
+														<Insets left="110.0" />
+													</GridPane.margin>
+												</Button>
+											</children>
+										</GridPane>
+									</children>
+								</VBox>
+							</center>
+							<bottom>
+								<ToolBar prefHeight="25.0">
+									<items>
+										<HBox alignment="CENTER_RIGHT" prefWidth="550.0">
+											<children>
+												<Button mnemonicParsing="false" onAction="#addPremiumElements"
+													text="Add premium options">
+													<HBox.margin>
+														<Insets right="30.0" />
+													</HBox.margin>
+												</Button>
+												<Button mnemonicParsing="false" onAction="#changeTab12"
+													text="Confirm and go tab Confirmation">
+													<HBox.margin>
+														<Insets />
+													</HBox.margin>
+												</Button>
+											</children>
+										</HBox>
+									</items>
+									<BorderPane.margin>
+										<Insets />
+									</BorderPane.margin>
+								</ToolBar>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="id_tab2_Confirmation" text="Confirmation">
+					<content>
+						<BorderPane>
+							<center>
+								<VBox BorderPane.alignment="CENTER">
+									<children>
+										<GridPane alignment="CENTER" prefHeight="250.0"
+											prefWidth="600.0">
+											<children>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="455.0"
+													text="Type of shipment" textFill="#0988ff">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="374.0"
+													text="Shipping speed" textFill="#0988ff" GridPane.rowIndex="1">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="430.0"
+													text="Fragile" textFill="#0988ff" GridPane.rowIndex="2">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label fx:id="lbl_myComboBoxChoice2" alignment="CENTER"
+													prefHeight="17.0" prefWidth="381.0" GridPane.columnIndex="1" />
+												<Label fx:id="id_lbl_cmBoxChoise2" alignment="CENTER"
+													prefHeight="17.0" prefWidth="348.0" text="Empty camp"
+													GridPane.columnIndex="1" GridPane.rowIndex="1">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label fx:id="id_lbl_cmBoxChoise3" alignment="CENTER"
+													prefHeight="17.0" prefWidth="385.0" text="Empty camp"
+													GridPane.columnIndex="1" GridPane.rowIndex="2">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="506.0"
+													text="Traceability code" textFill="#0988ff"
+													GridPane.rowIndex="3">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="497.0"
+													text="Date arrival" textFill="#0988ff" GridPane.rowIndex="4">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label fx:id="id_lbl_cmBoxChoise1" alignment="CENTER"
+													prefHeight="17.0" prefWidth="365.0" text="Empty camp"
+													GridPane.columnIndex="1">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label fx:id="id_lbl_cmBoxChoise4" alignment="CENTER"
+													prefHeight="17.0" prefWidth="390.0" text="Empty camp"
+													GridPane.columnIndex="1" GridPane.rowIndex="3">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label fx:id="id_lbl_datePickerChoise" alignment="CENTER"
+													prefHeight="17.0" prefWidth="462.0" text="Empty camp"
+													GridPane.columnIndex="1" GridPane.rowIndex="4">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Button mnemonicParsing="false" onAction="#changeTab23"
+													text="Informations" GridPane.rowIndex="5">
+													<GridPane.margin>
+														<Insets left="110.0" />
+													</GridPane.margin>
+												</Button>
+												<Label fx:id="id_lbl_successOptionChange" alignment="CENTER"
+													prefHeight="17.0" prefWidth="324.0" text="-----"
+													GridPane.columnIndex="1" GridPane.rowIndex="5">
+													<font>
+														<Font name="System Bold" size="14.0" />
+													</font>
+												</Label>
+											</children>
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES"
+													minWidth="10.0" prefWidth="100.0" />
+												<ColumnConstraints hgrow="SOMETIMES"
+													minWidth="10.0" prefWidth="100.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+											</rowConstraints>
+											<VBox.margin>
+												<Insets top="50.0" />
+											</VBox.margin>
+										</GridPane>
+									</children>
+									<BorderPane.margin>
+										<Insets />
+									</BorderPane.margin>
+								</VBox>
+							</center>
+							<bottom>
+								<ToolBar prefHeight="25.0" BorderPane.alignment="CENTER_RIGHT">
+									<items>
+										<HBox alignment="CENTER_RIGHT" prefWidth="550.0">
+											<children>
+												<Button mnemonicParsing="false" onAction="#changeTab21"
+													text="Return tab Shipment">
+													<HBox.margin>
+														<Insets right="30.0" />
+													</HBox.margin>
+												</Button>
+												<Button fx:id="id_btn_confirmOptions"
+													mnemonicParsing="false" onAction="#confirmOptions"
+													text="Confirm and accept your options" />
+											</children>
+										</HBox>
+									</items>
+								</ToolBar>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="id_tab3_Informations" text="Informations">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<center>
+								<VBox prefHeight="200.0" prefWidth="100.0"
+									BorderPane.alignment="CENTER">
+									<children>
+										<GridPane prefHeight="250.0" prefWidth="600.0">
+											<columnConstraints>
+												<ColumnConstraints hgrow="SOMETIMES"
+													maxWidth="293.0" minWidth="10.0" prefWidth="196.0" />
+												<ColumnConstraints hgrow="SOMETIMES"
+													maxWidth="404.0" minWidth="10.0" prefWidth="404.0" />
+											</columnConstraints>
+											<rowConstraints>
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+												<RowConstraints minHeight="10.0" prefHeight="30.0"
+													vgrow="SOMETIMES" />
+											</rowConstraints>
+											<VBox.margin>
+												<Insets top="50.0" />
+											</VBox.margin>
+											<children>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="456.0"
+													text="Type of shipment">
+													<font>
+														<Font name="System Bold" size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="352.0"
+													text="Shipping speed" GridPane.rowIndex="1">
+													<font>
+														<Font name="System Bold" size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="329.0"
+													text="Fragile" GridPane.rowIndex="2">
+													<font>
+														<Font name="System Bold" size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="17.0" prefWidth="395.0"
+													text="Traceability code" GridPane.rowIndex="3">
+													<font>
+														<Font name="System Bold" size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="20.0" prefWidth="200.0"
+													text="Date arrival" GridPane.rowIndex="4">
+													<font>
+														<Font name="System Bold" size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" contentDisplay="CENTER"
+													prefHeight="20.0" prefWidth="418.0"
+													text="The type of shipment that our company offers."
+													GridPane.columnIndex="1">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="20.0" prefWidth="447.0"
+													text="The type of shipment'speed that our company offers."
+													GridPane.columnIndex="1" GridPane.rowIndex="1">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="20.0" prefWidth="442.0"
+													text="The type solidity of tour chosen item"
+													GridPane.columnIndex="1" GridPane.rowIndex="2">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="20.0" prefWidth="434.0"
+													text="The code to identify your chosen item"
+													GridPane.columnIndex="1" GridPane.rowIndex="3">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+												<Label alignment="CENTER" prefHeight="20.0" prefWidth="434.0"
+													text="The date of When Your item will arrive"
+													GridPane.columnIndex="1" GridPane.rowIndex="4">
+													<font>
+														<Font size="14.0" />
+													</font>
+												</Label>
+											</children>
+										</GridPane>
+									</children>
+								</VBox>
+							</center>
+							<bottom>
+								<ToolBar prefHeight="25.0" BorderPane.alignment="CENTER">
+									<items>
+										<HBox alignment="CENTER_RIGHT" prefWidth="550.0">
+											<children>
+												<Button mnemonicParsing="false" onAction="#changeTab31"
+													text="Return tab Shipment">
+													<HBox.margin>
+														<Insets right="30.0" />
+													</HBox.margin>
+												</Button>
+												<Button mnemonicParsing="false" onAction="#changeTab32"
+													text="Return tab Confirmation" />
+											</children>
+										</HBox>
+									</items>
+								</ToolBar>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+	<bottom>
+		<ToolBar rotate="180.0">
+			<items>
+				<HBox alignment="BOTTOM_RIGHT" rotate="180.0" spacing="20.0" />
+			</items>
+		</ToolBar>
+	</bottom>
+</BorderPane>

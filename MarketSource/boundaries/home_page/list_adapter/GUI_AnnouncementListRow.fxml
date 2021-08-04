@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	<left>
+		<Hyperlink fx:id="lbl_title" onAction="#announcementViewEventHandler"
+			text="Title of Announcement" BorderPane.alignment="CENTER">
+			<effect>
+				<Blend />
+			</effect>
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Hyperlink>
+	</left>
+	<padding>
+		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+	</padding>
+	<top>
+		<BorderPane BorderPane.alignment="CENTER">
+			<bottom>
+				<Separator prefWidth="200.0" BorderPane.alignment="CENTER" />
+			</bottom>
+			<left>
+				<Label fx:id="lbl_Info" text="Pubblication Date: 00/00/00"
+					BorderPane.alignment="CENTER">
+					<effect>
+						<Blend />
+					</effect>
+				</Label>
+			</left>
+			<right>
+				<Label fx:id="lbl_price" text="Label" BorderPane.alignment="CENTER" />
+			</right>
+		</BorderPane>
+	</top>
+</BorderPane>
